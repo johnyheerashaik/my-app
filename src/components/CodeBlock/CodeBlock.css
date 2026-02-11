@@ -1,0 +1,78 @@
+/* Code Block Styles */
+.code-block-wrapper {
+    margin: 12px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.code-block-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.code-language {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #4f8cff;
+    letter-spacing: 0.5px;
+}
+
+.code-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.code-btn {
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+    color: #e8eefc;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.code-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.code-block {
+    margin: 0;
+    padding: 14px;
+    overflow-x: auto;
+    font-family: "Monaco", "Menlo", "Consolas", monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.code-block code {
+    color: #e8eefc;
+}
+
+/* Scrollbar styling */
+.code-block::-webkit-scrollbar {
+    height: 8px;
+}
+
+.code-block::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.code-block::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.code-block::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
