@@ -1,5 +1,18 @@
 .row {
     display: flex;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .row.user {
@@ -10,12 +23,29 @@
     justify-content: flex-start;
 }
 
-.bubble {
+.bubble-container {
     max-width: 760px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow: hidden;
+}
+
+.bubble {
     padding: 12px 14px;
     border-radius: 14px;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.2s ease;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+.bubble:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
 }
 
 .row.user .bubble {
@@ -23,15 +53,175 @@
     border: 1px solid rgba(79, 140, 255, 0.25);
 }
 
+.row.user .bubble:hover {
+    background: rgba(79, 140, 255, 0.22);
+    border-color: rgba(79, 140, 255, 0.35);
+}
+
+.bubble.error {
+    background: rgba(255, 79, 79, 0.15);
+    border: 1px solid rgba(255, 79, 79, 0.3);
+}
+
+.bubble-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
 .role {
     font-size: 12px;
-    opacity: 0.7;
-    margin-bottom: 6px;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.timestamp {
+    font-size: 11px;
+    opacity: 0.5;
 }
 
 .content {
     white-space: pre-wrap;
-    line-height: 1.45;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+}
+
+/* Attachments */
+.attachments {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.attachment-badge {
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: rgba(79, 140, 255, 0.2);
+    border: 1px solid rgba(79, 140, 255, 0.3);
+    color: #4f8cff;
+}
+
+/* Edit Mode */
+.edit-mode {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.edit-textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+    color: #e8eefc;
+    font-family: inherit;
+    font-size: 14px;
+    resize: vertical;
+    outline: none;
+}
+
+.edit-textarea:focus {
+    border-color: rgba(79, 140, 255, 0.5);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.edit-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.edit-btn {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+}
+
+.edit-btn.save {
+    background: rgba(79, 140, 255, 0.25);
+    color: #4f8cff;
+    border: 1px solid rgba(79, 140, 255, 0.4);
+}
+
+.edit-btn.save:hover {
+    background: rgba(79, 140, 255, 0.35);
+}
+
+.edit-btn.cancel {
+    background: rgba(255, 255, 255, 0.08);
+    color: #e8eefc;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.edit-btn.cancel:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Action Buttons */
+.bubble-actions {
+    display: flex;
+    gap: 4px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    padding: 0 4px;
+}
+
+.bubble-container:hover .bubble-actions {
+    opacity: 1;
+}
+
+.action-btn {
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: #e8eefc;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    line-height: 1;
+}
+
+.action-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.action-btn.reaction.active {
+    background: rgba(79, 140, 255, 0.25);
+    border-color: rgba(79, 140, 255, 0.4);
+    transform: scale(1.1);
+}
+
+.action-btn.retry {
+    background: rgba(255, 193, 7, 0.15);
+    border-color: rgba(255, 193, 7, 0.3);
+}
+
+.action-btn.retry:hover {
+    background: rgba(255, 193, 7, 0.25);
+}
+
+.action-btn.delete {
+    background: rgba(255, 79, 79, 0.1);
+    border-color: rgba(255, 79, 79, 0.2);
+}
+
+.action-btn.delete:hover {
+    background: rgba(255, 79, 79, 0.2);
 }
 
 /* Typing Indicator */
@@ -74,5 +264,22 @@
     30% {
         transform: translateY(-10px);
         opacity: 1;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .bubble-container {
+        max-width: 90%;
+    }
+
+    .bubble-actions {
+        opacity: 1;
+        /* Always show on mobile */
+    }
+
+    .action-btn {
+        font-size: 16px;
+        padding: 6px 10px;
     }
 }

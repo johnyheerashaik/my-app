@@ -193,3 +193,20 @@ Contributions welcome! Feel free to open issues or submit pull requests.
 
 **Johny Shaik**
 - GitHub: [@johnyheerashaik](https://github.com/johnyheerashaik)
+
+
+
+## 🤝 Screenshots
+<img src="screenshots/image.png" width="750" alt="Chat1">
+<img src="screenshots/image-1.png" width="750" alt="Chat2">
+<img src="screenshots/image-2.png" width="750" alt="Chat3">
+<img src="screenshots/image-3.png" width="750" alt="Chat4">
+<img src="screenshots/image-4.png" width="750" alt="Chat5">
+<img src="screenshots/image-5.png" width="750" alt="Chat6">
+<img src="screenshots/image-6.png" width="750" alt="Chat7">
+<img src="screenshots/image-7.png" width="750" alt="Chat8">
+<img src="screenshots/image-8.png" width="750" alt="Chat9">
+<img src="screenshots/image-9.png" width="750" alt="VSCode Extension">
+
+
+
