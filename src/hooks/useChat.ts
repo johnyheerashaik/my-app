@@ -174,8 +174,13 @@ export function useChat() {
     const controller = new AbortController();
     stopStreamRef.current = () => controller.abort();
 
+    // Use production backend URL or dev proxy
+    const apiUrl = import.meta.env.PROD 
+      ? 'https://my-app-2744.onrender.com/api/chat/stream'
+      : '/api/chat/stream';
+
     void streamFromSse({
-      url: '/api/chat/stream',
+      url: apiUrl,
       body: { messages: payloadMessages },
       signal: controller.signal,
       onChunk: (chunk) => appendAssistantToken(assistantMessageId, chunk),
