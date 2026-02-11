@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: my-app-backend
+    env: node
+    buildCommand: npm install --production=false
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
+      - key: AGENT_MAX_STEPS
+        value: 200
